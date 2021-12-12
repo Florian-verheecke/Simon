@@ -3,23 +3,30 @@ var pattern=[];
 var userPattern=[];
 var level = 0;
 
-if(level === 0)
-{
+
   $(document).on("keypress", function()
   {
+
+    if (level == 0) {
+
       nextSeq();
-  })
-};
+    }
+
+
+  });
+
+
 
 
 
 $('.btn').on('click',function(){
-
+if (level > 0){
 let choosen = $(this).attr("id");
 userPattern.push(choosen);
 flash(choosen);
 son(choosen);
 verif();
+}
 });
 
 function verif()
